@@ -6,11 +6,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const response = await fetch(`683c0108356211f0af66bc24113c8a5eymydpQCBvH`, {
-      headers: {
-        'Authorization': 'Bearer API_KEY_KAMU',
-      }
-    });
+    const response = await fetch(`https://apidev.biz.id/api/cek-ewallet?nomor=${nomor}&provider=${provider}&apikey=8b48ee72361111f0ba00bc24113c8a5effCGRRSnnG`);
 
     const data = await response.json();
 

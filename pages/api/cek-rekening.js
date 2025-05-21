@@ -6,16 +6,10 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Ganti URL di bawah dengan URL API dari apidev.biz.id dan sesuaikan parameter
-    const response = await fetch(`683c0108356211f0af66bc24113c8a5eymydpQCBvH`, {
-      headers: {
-        'Authorization': 'Bearer API_KEY_KAMU',  // kalau ada token, masukkan di sini
-      }
-    });
+    const response = await fetch(`https://apidev.biz.id/api/cek-rekening?nomor=${nomor}&bank=${bank}&apikey=8b48ee72361111f0ba00bc24113c8a5effCGRRSnnG`);
 
     const data = await response.json();
 
-    // Kirim balik hasil API apidev.biz.id ke frontend
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json({ status: 'error', message: 'Gagal memanggil API' });
